@@ -4,12 +4,22 @@
 # Contributor: Duong Pham <dthpham@gmail.com>
 
 _realname=numpy
-pkgbase=mingw-w64-python-${_realname}
-pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-provides=("${MINGW_PACKAGE_PREFIX}-python3-${_realname}")
-conflicts=("${MINGW_PACKAGE_PREFIX}-python3-${_realname}")
-replaces=("${MINGW_PACKAGE_PREFIX}-python3-${_realname}")
 pkgver=1.22.0
+pkgbase=mingw-w64-python-${_realname}
+pkgname=(
+  "${MINGW_PACKAGE_PREFIX}-python-${_realname}-${pkgver}"
+)
+provides=(
+  "${MINGW_PACKAGE_PREFIX}-python-${_realname}=1.22.0"
+  "${MINGW_PACKAGE_PREFIX}-python3-${_realname}"
+)
+conflicts=(
+  "${MINGW_PACKAGE_PREFIX}-python-${_realname}"
+  "${MINGW_PACKAGE_PREFIX}-python3-${_realname}"
+)
+replaces=(
+  "${MINGW_PACKAGE_PREFIX}-python3-${_realname}"
+)
 pkgrel=1
 pkgdesc="Scientific tools for Python (mingw-w64)"
 arch=('any')
